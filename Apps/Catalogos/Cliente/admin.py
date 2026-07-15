@@ -5,5 +5,5 @@ from Apps.Catalogos.Cliente.models import Cliente
 @admin.register(Cliente)
 class ClienteAdmin(admin.ModelAdmin):
 
-    search_fields = ['id', 'Nombre']
-    list_display = ['id', 'Nombre', 'Apellido', 'NumCedula', 'NumTelefono', 'Estado']
+    search_fields = ['Nombre', 'Apellido']
+    list_display = ['Nombre', 'Apellido', 'NumCedula', 'NumTelefono']

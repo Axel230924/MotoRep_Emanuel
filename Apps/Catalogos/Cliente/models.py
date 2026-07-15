@@ -5,7 +5,7 @@ class Cliente (models.Model):
     Apellido = models.CharField(verbose_name='Apellidos', max_length=30,)
     NumCedula = models.CharField(verbose_name='Número de Cédula', max_length=20, unique=True, null=True, blank=True)
     NumTelefono = models.IntegerField(verbose_name='Número de Teléfono', null=True, blank=True)
-    Estado = models.BooleanField(default=True)
+    estado = models.BooleanField(default=True)
 
     class Meta:
         verbose_name_plural = 'Clientes'

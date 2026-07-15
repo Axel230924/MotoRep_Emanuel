@@ -5,5 +5,5 @@ from Apps.Catalogos.Empleado.models import Empleado
 @admin.register(Empleado)
 class EmpleadoAdmin(admin.ModelAdmin):
 
-    search_fields = ['id', 'Nombre']
-    list_display = ['id', 'Nombre', 'Apellido', 'NumCedula', 'NumTelefono', 'Direccion', 'Estado']
+    search_fields = ['Nombre', 'Apellido']
+    list_display = ['Nombre', 'Apellido', 'NumCedula', 'NumTelefono', 'Direccion']

@@ -10,5 +10,7 @@ CATALOGOS_SETTING_APPS = [
                           'Apps.Catalogos.Proveedor',
                           'Apps.Catalogos.TamañoProducto',
                           'Apps.Catalogos.TipoMarca',
-                          'Apps.Catalogos.TipoMovCaja'
+                          'Apps.Catalogos.TipoMovCaja',
+                          'Apps.Catalogos.Moto',
+                          'Apps.Catalogos.Marca',
                          ]

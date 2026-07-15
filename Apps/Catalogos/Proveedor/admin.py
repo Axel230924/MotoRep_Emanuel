@@ -5,5 +5,5 @@ from Apps.Catalogos.Proveedor.models import Proveedor
 @admin.register(Proveedor)
 class ProveedorAdmin(admin.ModelAdmin):
 
-    search_fields = ['id', 'Nombre']
-    list_display = ['id', 'Nombre', 'NumTelefono', 'Estado']
+    search_fields = ['Nombre']
+    list_display = ['Nombre', 'NumTelefono']

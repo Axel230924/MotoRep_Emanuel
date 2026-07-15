@@ -17,6 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 from Apps.Catalogos.Setting_apps import CATALOGOS_SETTING_APPS
 from Apps.Seguridad.Setting_apps import SEGURIDAD_SETTING_APPS
+from Apps.Movimientos.Setting_apps import MOVIMIENTOS_SETTING_APPS
 
 
 # Quick-start development settings - unsuitable for production
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'rest_framework_simplejwt',
-] + CATALOGOS_SETTING_APPS + SEGURIDAD_SETTING_APPS
+] + CATALOGOS_SETTING_APPS + SEGURIDAD_SETTING_APPS + MOVIMIENTOS_SETTING_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
