@@ -16,7 +16,7 @@ class Factura(models.Model):
         verbose_name_plural = 'Facturas'
     
     def __str__(self):  
-        return f"Factura {self.NumFactura} - {self.Fecha}"
+        return f"Factura {self.NumFactura} - {self.ClienteId.Nombre} - {self.ClienteId.Apellido}"
     
 class DetalleFactura(models.Model):
     Cantidad = models.IntegerField(verbose_name='Cantidad del Producto')
@@ -30,7 +30,7 @@ class DetalleFactura(models.Model):
         verbose_name_plural = 'Detalles de la Factura'
 
     def __str__(self):
-        return f"Detalle de la Factura {self.FacturaId.NumFactura} - {self.LoteProductoId.ProductoId.Nombre}"
+        return f"Detalle de la Factura {self.LoteProductoId.DetalleCompraId.DetalleProductoId.ProductoId.Nombre} - {self.LoteProductoId.DetalleCompraId.DetalleProductoId.MotoId.Modelo} -  {self.LoteProductoId.DetalleCompraId.DetalleProductoId.MarcaId.Nombre} - {self.PrecioUnitario}"
     
 class FacturaCredito(models.Model):
     FechaInicio = models.DateField(auto_now_add=True, verbose_name='Fecha de Inicio de la Factura')

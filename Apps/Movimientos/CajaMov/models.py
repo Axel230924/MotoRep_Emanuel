@@ -22,13 +22,13 @@ class TurnoCaja(models.Model):
         verbose_name_plural = 'Turnos de la Caja'
 
     def __str__(self):
-        return f"{self.EmpleadoId.Nombre} - {self.CajaId.Nombre} - {self.FechaApertura}"
+        return f"{self.CajaId.NumCaja} - {self.EmpleadoId.Nombre} - {self.EmpleadoId.Apellido} - {self.FechaApertura}"
     
 class MovimientoCaja(models.Model):
     FechaMovimiento = models.DateTimeField(auto_now_add=True, verbose_name='Fecha del Movimiento de la caja')
     MontoTotal = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='Monto del Movimiento de la caja')
     Descripcion = models.TextField(verbose_name='Descripción del Movimiento de la caja', null= True, blank= True)
-    TipoMovimientoId = models.ForeignKey(TipoMovCaja, on_delete=models.PROTECT)
+    TipoMovCajaId = models.ForeignKey(TipoMovCaja, on_delete=models.PROTECT)
     TurnoCajaId = models.ForeignKey(TurnoCaja, on_delete=models.PROTECT)
     CompraId = models.ForeignKey(Compra, on_delete=models.PROTECT, null=True, blank=True)
     CompraCreditoId = models.ForeignKey(CompraCredito, on_delete=models.PROTECT, null=True, blank=True)
@@ -40,7 +40,7 @@ class MovimientoCaja(models.Model):
         verbose_name_plural = 'Movimientos de la caja'
 
     def __str__(self):
-        return f"{self.TipoMovimientoId.Nombre} - {self.FechaMovimiento}"
+        return f"{self.TipoMovCajaId.Nombre} - {self.FechaMovimiento}"
     
 class DetallePagoMov(models.Model):
     Monto = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='Monto del Pago del Movimiento de la caja')

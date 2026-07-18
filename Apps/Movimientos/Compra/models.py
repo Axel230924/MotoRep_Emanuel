@@ -4,7 +4,7 @@ from Apps.Catalogos.CondicionPago.models import CondicionPago
 from Apps.Movimientos.Producto.models import DetalleProducto
 
 class Compra(models.Model):
-    FechaCompra = models.DateField(auto_now_add=True, verbose_name='Fecha de Compra')
+    FechaCompra = models.DateField(verbose_name='Fecha de Compra')
     NumCompra = models.CharField(max_length=20, verbose_name='Número de Compra')
     Total = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Total de la Compra')
     ProveedorId = models.ForeignKey(Proveedor, on_delete=models.PROTECT)
@@ -27,7 +27,7 @@ class DetalleCompra(models.Model):
         verbose_name_plural = 'Detalles de la Compra'
 
     def __str__(self):
-        return f"Detalle de la Compra {self.DetalleProductoId.ProductoId.Nombre} - {self.DetalleProductoId.MotoId.Modelo} - {self.DetalleProductoId.MarcaId.Nombre}"
+        return f"Detalle de la Compra {self.DetalleProductoId.ProductoId.Nombre} - {self.DetalleProductoId.MotoId.Modelo} - {self.DetalleProductoId.MarcaId.Nombre} - {self.PrecioUnitario}"
     
 class CompraCredito(models.Model):
     Monto = models.DecimalField(max_digits=7, decimal_places=2, verbose_name='Monto del Crédito')
@@ -40,4 +40,4 @@ class CompraCredito(models.Model):
         verbose_name_plural = 'Compras de credito'
 
     def __str__(self):
-        return f"Crédito de la Compra {self.CompraId.NumCompra}"
+        return f"Crédito de la Compra {self.CompraId.NumCompra} - {self.FechaVencimiento}"

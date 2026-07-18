@@ -13,4 +13,4 @@ class LoteProducto(models.Model):
         verbose_name_plural = 'Lotes de productos'
     
     def __str__(self):
-        return f"{self.DetalleCompraId.DetalleProductoId.ProductoId.Nombre} - {self.DetalleCompraId.DetalleProductoId.MotoId.Modelo} - {self.DetalleCompraId.DetalleProductoId.MarcaId.Nombre}"
+        return f"{self.DetalleCompraId.DetalleProductoId.ProductoId.Nombre} - {self.DetalleCompraId.DetalleProductoId.MotoId.Modelo} - {self.DetalleCompraId.DetalleProductoId.MarcaId.Nombre} - {self.PrecioVenta}"

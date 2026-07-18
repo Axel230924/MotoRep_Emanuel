@@ -14,7 +14,7 @@ class Producto(models.Model):
         verbose_name_plural = 'Productos'
 
     def __str__(self):
-        return self.Nombre
+        return f"{self.Nombre}"
     
 class DetalleProducto(models.Model):
     ProductoId = models.ForeignKey(Producto, on_delete=models.PROTECT)
